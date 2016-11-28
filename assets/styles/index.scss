@@ -1,0 +1,74 @@
+@import 'base/normalize';
+@import 'components/nav';
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin-top: 60px;
+    font-family: 'Open Sans';
+    font-weight: lighter;
+    color: #333;
+    line-height: 1.5em;
+}
+
+.col {
+    position: relative;
+    width: 50%;
+    height: calc(100% - 60px);
+    float: left
+}
+.u-text-right{
+    text-align:right;
+}
+
+.marker {
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    line-height: 34px;
+    background-color: #D42929;
+    border: 3px #fff solid;
+    text-align: center;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+    transition: border .3s ease, background-color .3s ease, color .3s ease;
+}
+
+.marker:hover {
+    border: solid 3px #D42929;
+    background-color: #fff;
+    color: #000;
+}
+
+.lesson{
+    padding: 60px;
+}
+.seperator{
+    border-top: solid 3px #666;
+    width: 100px;
+    margin-top: 50px;
+}
+
+.title {
+    padding: 30px 0 20px;
+    font-size: 60px;
+    // max-width: 490px;
+    line-height: 1.2em;
+}
+.banner{
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    overflow: hidden
+}
