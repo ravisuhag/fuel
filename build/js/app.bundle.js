@@ -15,10 +15,10 @@ webpackJsonp([0],[
 	
 	    Lessons.forEach(function (lesson, index) {
 	
-	        var r = 1000 / 111300,
+	        var r = 300 / 111300,
 	            // = 100 meters
-	        y0 = 50.970287,
-	            x0 = 1.9032203,
+	        y0 = 50.9683611,
+	            x0 = 1.9059048,
 	            u = Math.random(),
 	            v = Math.random(),
 	            w = r * Math.sqrt(u),
@@ -31,20 +31,31 @@ webpackJsonp([0],[
 	        var newX = x0 + x1;
 	
 	        // Add Marker
-	        var marker = new Marker(new google.maps.LatLng(newY, newX), map, {
-	            marker_id: '1',
-	            text: lesson['Age']
+	        // var marker = new Marker(
+	        //     new google.maps.LatLng(newY, newX),
+	        //     map, {
+	        //         marker_id: index
+	        //     }
+	        // );
+	        var marker = new google.maps.Marker({
+	            position: new google.maps.LatLng(newY, newX),
+	            map: map
 	        });
 	
 	        marker.addListener('click', function () {
 	
-	            document.getElementById('lesson-title').textContent = lesson['Life Lesson'];
-	            document.getElementById('lesson-author').textContent = '- ' + lesson['Name'];
-	            document.getElementById('lesson-story').textContent = lesson['Story Behind the lesson'];
+	            // document.getElementById('lesson-title').textContent = lesson['Life Lesson'];
+	            // document.getElementById('lesson-author').textContent = '- ' + lesson['Name'];
+	            // document.getElementById('lesson-story').textContent = lesson['Story Behind the lesson'];
+	            // var img = Math.floor(Math.random() * 23) + 1;
+	            // document.getElementById('lesson-banner').style.backgroundImage = 'url(build/images/pictures/' + img + '.jpg)';
 	
 	            var img = Math.floor(Math.random() * 23) + 1;
+	            var contentString = '<div id="lesson-banner" class="banner" style="background-image: url(build/images/pictures/' + img + '.jpg);"></div>' + '<div>' + '<div id="lesson-title" class="title">' + lesson['Life Lesson'] + '</div>' + '<p id="lesson-story">' + lesson['Story Behind the lesson'] + '</p>' + '<p id="lesson-author" class="u-text-right lesson-author">' + '- ' + lesson['Name'] + ', ' + lesson['Age'] + ' (' + lesson['Country of Origin'] + ')' + '</p>' + '</div>';
 	
-	            document.getElementById('lesson-banner').style.backgroundImage = 'url(build/images/pictures/' + img + '.jpg)';
+	            infowindow.close();
+	            infowindow.setContent(contentString);
+	            infowindow.open(map, marker);
 	        });
 	    });
 	});
@@ -58,8 +69,9 @@ webpackJsonp([0],[
 	module.exports = function (target, options) {
 	
 	    var defaults = {
-	        zoom: 15,
-	        center: new google.maps.LatLng(50.970287, 1.9032203),
+	        zoom: 17,
+	        center: new google.maps.LatLng(50.9683611, 1.9059048),
+	        mapTypeId: 'satellite',
 	        styles: [{
 	            "featureType": "administrative",
 	            "elementType": "labels.text.fill",

@@ -17,11 +17,9 @@ body {
     line-height: 1.5em;
 }
 
-.col {
+.map {
     position: relative;
-    width: 50%;
     height: calc(100% - 60px);
-    float: left
 }
 .u-text-right{
     text-align:right;
@@ -32,12 +30,12 @@ body {
     cursor: pointer;
     color: #fff;
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
     font-size: 16px;
     line-height: 34px;
     background-color: #D42929;
-    border: 3px #fff solid;
+    border: 1px #fff solid;
     text-align: center;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
     transition: border .3s ease, background-color .3s ease, color .3s ease;
@@ -60,8 +58,7 @@ body {
 
 .title {
     padding: 30px 0 20px;
-    font-size: 60px;
-    // max-width: 490px;
+    font-size: 30px;
     line-height: 1.2em;
 }
 .banner{
@@ -70,5 +67,7 @@ body {
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    overflow: hidden
+    overflow: hidden;
+    float: left;
+    margin: 40px 40px 40px 10px;
 }

@@ -3,8 +3,9 @@
 module.exports = function(target, options) {
 
     var defaults = {
-        zoom: 15,
-        center: new google.maps.LatLng(50.970287, 1.9032203),
+        zoom: 17,
+        center: new google.maps.LatLng(50.9683611,1.9059048),
+        mapTypeId: 'satellite',
         styles: [{
             "featureType": "administrative",
             "elementType": "labels.text.fill",
