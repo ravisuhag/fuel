@@ -33,9 +33,9 @@ google.maps.event.addDomListener(window, 'load', function() {
         //     }
         // );
 
-        var pinColor = 'E9D460';
+        var pinColor = '1581C9';
         if(lesson['Type'] === 'volunteer'){
-            pinColor = '1581C9';
+            pinColor = 'E9D460';
         }
         var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
             new google.maps.Size(21, 34),
