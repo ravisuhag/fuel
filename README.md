@@ -1,5 +1,5 @@
 # Fuel 
-<img align="right" height="200" src="/assets/images/fuel.png">
+<img align="right" height="400" src="/assets/images/fuel.png">
 > Calais Jungle Wisdom Map
 
 Calais Jungle was, until recently, an illegal refugee and migrant camp in the south of France where nearly 7000 refugees from more than eight nationalities had temporarily settled. These were not just refugees displaced by conflict in their home countries but also economic and political refugees, amongst others. Most residents of the camp who we interacted with had one big goal - to smuggle themselves into the United Kingdom via lorries / ferries /cars / trains travelling to the UK. 
