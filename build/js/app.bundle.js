@@ -37,9 +37,9 @@ webpackJsonp([0],[
 	        //     }
 	        // );
 	
-	        var pinColor = 'E9D460';
+	        var pinColor = '1581C9';
 	        if (lesson['Type'] === 'volunteer') {
-	            pinColor = '1581C9';
+	            pinColor = 'E9D460';
 	        }
 	        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor, new google.maps.Size(21, 34), new google.maps.Point(0, 0), new google.maps.Point(10, 34));
 	        var pinShadow = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow", new google.maps.Size(40, 37), new google.maps.Point(0, 0), new google.maps.Point(12, 35));
