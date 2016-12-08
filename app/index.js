@@ -5,6 +5,29 @@ const Marker = require('./components/marker');
 const Lessons = require('./data/lessons');
 
 
+var open_about = document.getElementById('open-about');
+
+open_about.addEventListener('click', function(){
+    openModal();
+});
+
+var close_about = document.getElementById('close-about');
+
+close_about.addEventListener('click', function(){
+    closeModal();
+});
+
+var overlay = document.getElementById('overlay');
+
+function openModal(){
+  overlay.classList.remove("is-hidden");
+}
+
+function closeModal(){
+  overlay.classList.add("is-hidden");
+}
+
+
 google.maps.event.addDomListener(window, 'load', function() {
 
     var map = Gmap('map');

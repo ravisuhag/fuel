@@ -8,6 +8,28 @@ webpackJsonp([0],[
 	var Marker = __webpack_require__(2);
 	var Lessons = __webpack_require__(3);
 	
+	var open_about = document.getElementById('open-about');
+	
+	open_about.addEventListener('click', function () {
+	    openModal();
+	});
+	
+	var close_about = document.getElementById('close-about');
+	
+	close_about.addEventListener('click', function () {
+	    closeModal();
+	});
+	
+	var overlay = document.getElementById('overlay');
+	
+	function openModal() {
+	    overlay.classList.remove("is-hidden");
+	}
+	
+	function closeModal() {
+	    overlay.classList.add("is-hidden");
+	}
+	
 	google.maps.event.addDomListener(window, 'load', function () {
 	
 	    var map = Gmap('map');

@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  margin-top: 60px;
+  font-family: 'Open Sans';
+  font-weight: lighter;
+  color: #333;
+  line-height: 1.5em; }
