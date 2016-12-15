@@ -1,43 +1,7 @@
+@import 'base/config';
 @import 'base/normalize';
 @import 'base/base';
 @import 'components/nav';
 @import 'components/modal';
 @import 'components/marker';
-
-.col {
-    position: relative;
-    width: 50%;
-    height: calc(100% - 60px);
-    float: left
-}
-
-.map {
-    position: relative;
-    height: calc(100% - 60px);
-    width: 60%
-}
-
-.lesson {
-    padding: 60px;
-}
-
-.seperator {
-    border-top: solid 3px #666;
-    width: 100px;
-    margin-top: 50px;
-}
-
-.title {
-    padding: 30px 0 20px;
-    font-size: 60px;
-    line-height: 1.2em;
-}
-
-.banner {
-    height: 200px;
-    width: 200px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    overflow: hidden
-}
+@import 'components/panel';

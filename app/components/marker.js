@@ -17,7 +17,6 @@ CustomMarker.prototype.draw = function() {
 
         div = this.div = document.createElement('div');
         div.className = 'marker';
-        div.className = 'pin';
         div.textContent = self.args.text;
 
         if (typeof(self.args.marker_id) !== 'undefined') {

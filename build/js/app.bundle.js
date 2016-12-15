@@ -7,6 +7,9 @@ webpackJsonp([0],[
 	var Gmap = __webpack_require__(1);
 	var Marker = __webpack_require__(2);
 	var Lessons = __webpack_require__(3);
+	var $ = __webpack_require__(4);
+	
+	var prev_marker = null;
 	
 	google.maps.event.addDomListener(window, 'load', function () {
 	
@@ -15,14 +18,12 @@ webpackJsonp([0],[
 	
 	    Lessons.forEach(function (lesson, index) {
 	
-	        var r = 1800 / 111300,
+	        var r = 1000 / 111300,
 	            // = x meters
 	        y0 = 50.9683611,
 	            x0 = 1.9059048,
-	            u = Math.random(),
-	            v = Math.random(),
-	            w = r * Math.sqrt(u),
-	            t = 2 * Math.PI * v,
+	            w = r * Math.sqrt(Math.random()),
+	            t = 2 * Math.PI * Math.random(),
 	            x = w * Math.cos(t),
 	            y1 = w * Math.sin(t),
 	            x1 = x / Math.cos(y0);
@@ -30,16 +31,44 @@ webpackJsonp([0],[
 	        var newY = y0 + y1;
 	        var newX = x0 + x1;
 	
-	        var marker = new Marker(new google.maps.LatLng(newY, newX), map, {
-	            marker_id: '1'
+	        var icon = {
+	            url: 'build/images/marker_blue.png',
+	            size: new google.maps.Size(71, 71),
+	            origin: new google.maps.Point(0, 0),
+	            anchor: new google.maps.Point(17, 34),
+	            scaledSize: new google.maps.Size(20, 30)
+	        };
+	
+	        if (lesson['Type'] === 'volunteer') {
+	            icon.url = 'build/images/marker_yellow.png';
+	        }
+	
+	        var marker = new google.maps.Marker({
+	            position: new google.maps.LatLng(newY, newX),
+	            map: map,
+	            icon: icon,
+	            id: index
 	        });
 	
 	        marker.addListener('click', function () {
+	
+	            if (prev_marker) {
+	                if (prev_marker.getAnimation() !== null) {
+	                    prev_marker.setAnimation(null);
+	                    marker.setAnimation(google.maps.Animation.BOUNCE);
+	                    prev_marker = marker;
+	                }
+	            } else {
+	                marker.setAnimation(google.maps.Animation.BOUNCE);
+	                prev_marker = marker;
+	            }
+	
+	            var duration = 700;
 	            var img = Math.floor(Math.random() * 23) + 1;
-	            document.getElementById('lesson-title').textContent = lesson['Life Lesson'];
-	            document.getElementById('lesson-author').textContent = '- ' + lesson['Name'];
-	            document.getElementById('lesson-story').textContent = lesson['Story Behind the lesson'];
-	            document.getElementById('lesson-banner').style.backgroundImage = 'url(build/images/pictures/' + img + '.jpg)';
+	            $('#lesson-title').text(lesson['Life Lesson']).hide().fadeIn(duration);
+	            $('#lesson-author').text('- ' + lesson['Name'] + ', ' + lesson['Age'] + ' (' + lesson['Country of Origin'] + ')').hide().fadeIn(duration);
+	            $('#lesson-story').text(lesson['Story Behind the lesson']).hide().fadeIn(duration);
+	            $('#lesson-banner').css('background-image', 'url(build/images/pictures/' + img + '.jpg)').hide().fadeIn(duration);
 	        });
 	    });
 	});
@@ -53,9 +82,14 @@ webpackJsonp([0],[
 	module.exports = function (target, options) {
 	
 	    var defaults = {
-	        zoom: 14,
-	        center: new google.maps.LatLng(50.9683611, 1.9059048),
-	        styles: [{ "elementType": "labels", "stylers": [{ "visibility": "off" }, { "color": "#f49f53" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f9ddc5" }, { "lightness": -7 }] }, { "featureType": "road", "stylers": [{ "color": "#813033" }, { "lightness": 43 }] }, { "featureType": "poi.business", "stylers": [{ "color": "#645c20" }, { "lightness": 38 }] }, { "featureType": "water", "stylers": [{ "color": "#1994bf" }, { "saturation": -69 }, { "gamma": 0.99 }, { "lightness": 43 }] }, { "featureType": "road.local", "elementType": "geometry.fill", "stylers": [{ "color": "#f19f53" }, { "weight": 1.3 }, { "visibility": "on" }, { "lightness": 16 }] }, { "featureType": "poi.business" }, { "featureType": "poi.park", "stylers": [{ "color": "#645c20" }, { "lightness": 39 }] }, { "featureType": "poi.school", "stylers": [{ "color": "#a95521" }, { "lightness": 35 }] }, {}, { "featureType": "poi.medical", "elementType": "geometry.fill", "stylers": [{ "color": "#813033" }, { "lightness": 38 }, { "visibility": "off" }] }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, { "elementType": "labels" }, { "featureType": "poi.sports_complex", "stylers": [{ "color": "#9e5916" }, { "lightness": 32 }] }, {}, { "featureType": "poi.government", "stylers": [{ "color": "#9e5916" }, { "lightness": 46 }] }, { "featureType": "transit.station", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "stylers": [{ "color": "#813033" }, { "lightness": 22 }] }, { "featureType": "transit", "stylers": [{ "lightness": 38 }] }, { "featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{ "color": "#f19f53" }, { "lightness": -10 }] }, {}, {}, {}]
+	        zoom: 16,
+	        center: new google.maps.LatLng(50.9683611, 1.9129048),
+	        mapTypeControl: true,
+	        mapTypeControlOptions: {
+	            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+	            position: google.maps.ControlPosition.LEFT_BOTTOM
+	        },
+	        styles: [{ "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "color": "#f5f5f2" }, { "visibility": "on" }] }, { "featureType": "administrative", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.attraction", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape.man_made", "elementType": "geometry.fill", "stylers": [{ "color": "#ffffff" }, { "visibility": "on" }] }, { "featureType": "poi.business", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.medical", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.place_of_worship", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.school", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.sports_complex", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "visibility": "simplified" }] }, { "featureType": "road.arterial", "stylers": [{ "visibility": "simplified" }, { "color": "#ffffff" }] }, { "featureType": "road.highway", "elementType": "labels.icon", "stylers": [{ "color": "#ffffff" }, { "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.arterial", "stylers": [{ "color": "#ffffff" }] }, { "featureType": "road.local", "stylers": [{ "color": "#ffffff" }] }, { "featureType": "poi.park", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "stylers": [{ "color": "#71c8d4" }] }, { "featureType": "landscape", "stylers": [{ "color": "#e5e8e7" }] }, { "featureType": "poi.park", "stylers": [{ "color": "#8ba129" }] }, { "featureType": "road", "stylers": [{ "color": "#ffffff" }] }, { "featureType": "poi.sports_complex", "elementType": "geometry", "stylers": [{ "color": "#c7c7c7" }, { "visibility": "off" }] }, { "featureType": "water", "stylers": [{ "color": "#a0d3d3" }] }, { "featureType": "poi.park", "stylers": [{ "color": "#91b65d" }] }, { "featureType": "poi.park", "stylers": [{ "gamma": 1.51 }] }, { "featureType": "road.local", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "visibility": "on" }] }, { "featureType": "poi.government", "elementType": "geometry", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.local", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road" }, { "featureType": "road" }, {}, { "featureType": "road.highway" }]
 	    };
 	    if (!options) {
 	        options = {};
@@ -92,7 +126,6 @@ webpackJsonp([0],[
 	
 	        div = this.div = document.createElement('div');
 	        div.className = 'marker';
-	        div.className = 'pin';
 	        div.textContent = self.args.text;
 	
 	        if (typeof self.args.marker_id !== 'undefined') {
