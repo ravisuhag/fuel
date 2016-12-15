@@ -5,6 +5,8 @@ const Marker = require('./components/marker');
 const Lessons = require('./data/lessons');
 const $ = require('jquery');
 
+require('./components/modal');
+
 var prev_marker = null;
 
 google.maps.event.addDomListener(window, 'load', function() {

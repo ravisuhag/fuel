@@ -514,10 +514,10 @@ a {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); }
 
 .panel_overview {
-  padding: 40px; }
+  padding: 20px 40px 40px; }
 
 .panel_title {
-  padding: 0 0 20px;
+  padding: 20px 0 10px;
   font-size: 20px;
   line-height: 1.45em;
   font-weight: 500; }
