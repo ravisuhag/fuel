@@ -439,7 +439,7 @@ a {
   width: 100%;
   position: fixed;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(44, 140, 206, 0.99);
   color: white;
   z-index: 999;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
@@ -454,7 +454,7 @@ a {
 
 .nav-button {
   border-radius: 0.4rem;
-  color: #666;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 13px;
@@ -469,8 +469,8 @@ a {
   white-space: nowrap; }
 
 .nav-title {
-  color: #333;
-  font-size: 14px;
+  color: #fff;
+  font-size: 16px;
   font-weight: bold; }
 
 .is-hidden {
@@ -504,13 +504,12 @@ a {
 
 .panel {
   position: fixed;
-  right: 50px;
-  top: 90px;
-  width: 500px;
+  right: 0;
+  top: 60px;
+  width: 400px;
   overflow: scroll;
-  height: calc(100% - 200px);
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.9);
+  height: calc(100% - 60px);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); }
 
 .panel_overview {

@@ -1,12 +1,11 @@
 .panel {
     position: fixed;
-    right: 50px;
-    top: 90px;
-    width: 500px;
+    right: 0;
+    top: 60px;
+    width: 400px;
     overflow:scroll;
-    height: calc(100% - 200px);
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.9);
+    height: calc(100% - 60px);
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 .panel_overview{
