@@ -3,86 +3,11 @@
 module.exports = function(target, options) {
 
     var defaults = {
-        zoom: 17,
-        center: new google.maps.LatLng(50.9683611,1.9059048),
-        mapTypeId: 'satellite',
-        styles: [{
-            "featureType": "administrative",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-                "color": "#444444"
-            }]
-        }, {
-            "featureType": "landscape",
-            "elementType": "all",
-            "stylers": [{
-                "color": "#f2f2f2"
-            }]
-        }, {
-            "featureType": "landscape",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#f0e3ce"
-            }, {
-                "lightness": "39"
-            }, {
-                "gamma": "1.01"
-            }]
-        }, {
-            "featureType": "poi",
-            "elementType": "all",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "all",
-            "stylers": [{
-                "saturation": -100
-            }, {
-                "lightness": 45
-            }]
-        }, {
-            "featureType": "road",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#ffffff"
-            }]
-        }, {
-            "featureType": "road.highway",
-            "elementType": "all",
-            "stylers": [{
-                "visibility": "simplified"
-            }]
-        }, {
-            "featureType": "road.arterial",
-            "elementType": "labels.icon",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "transit",
-            "elementType": "all",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "water",
-            "elementType": "all",
-            "stylers": [{
-                "color": "#e7e1d6"
-            }, {
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#d9d9d9"
-            }]
-        }]
+        zoom: 14,
+        center: new google.maps.LatLng(50.9683611, 1.9059048),
+        styles: [{ "elementType": "labels", "stylers": [{ "visibility": "off" }, { "color": "#f49f53" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f9ddc5" }, { "lightness": -7 }] }, { "featureType": "road", "stylers": [{ "color": "#813033" }, { "lightness": 43 }] }, { "featureType": "poi.business", "stylers": [{ "color": "#645c20" }, { "lightness": 38 }] }, { "featureType": "water", "stylers": [{ "color": "#1994bf" }, { "saturation": -69 }, { "gamma": 0.99 }, { "lightness": 43 }] }, { "featureType": "road.local", "elementType": "geometry.fill", "stylers": [{ "color": "#f19f53" }, { "weight": 1.3 }, { "visibility": "on" }, { "lightness": 16 }] }, { "featureType": "poi.business" }, { "featureType": "poi.park", "stylers": [{ "color": "#645c20" }, { "lightness": 39 }] }, { "featureType": "poi.school", "stylers": [{ "color": "#a95521" }, { "lightness": 35 }] }, {}, { "featureType": "poi.medical", "elementType": "geometry.fill", "stylers": [{ "color": "#813033" }, { "lightness": 38 }, { "visibility": "off" }] }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, { "elementType": "labels" }, { "featureType": "poi.sports_complex", "stylers": [{ "color": "#9e5916" }, { "lightness": 32 }] }, {}, { "featureType": "poi.government", "stylers": [{ "color": "#9e5916" }, { "lightness": 46 }] }, { "featureType": "transit.station", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "stylers": [{ "color": "#813033" }, { "lightness": 22 }] }, { "featureType": "transit", "stylers": [{ "lightness": 38 }] }, { "featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{ "color": "#f19f53" }, { "lightness": -10 }] }, {}, {}, {}]
     };
-    if (!options) { 
+    if (!options) {
         options = {};
     }
     for (var key in defaults) {

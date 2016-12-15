@@ -2,42 +2,26 @@
 @import 'base/base';
 @import 'components/nav';
 @import 'components/modal';
+@import 'components/marker';
 
+.col {
+    position: relative;
+    width: 50%;
+    height: calc(100% - 60px);
+    float: left
+}
 
 .map {
     position: relative;
     height: calc(100% - 60px);
-}
-.u-text-right{
-    text-align:right;
+    width: 60%
 }
 
-.marker {
-    position: absolute;
-    cursor: pointer;
-    color: #fff;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    font-size: 16px;
-    line-height: 34px;
-    background-color: #D42929;
-    border: 1px #fff solid;
-    text-align: center;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
-    transition: border .3s ease, background-color .3s ease, color .3s ease;
-}
-
-.marker:hover {
-    border: solid 3px #D42929;
-    background-color: #fff;
-    color: #000;
-}
-
-.lesson{
+.lesson {
     padding: 60px;
 }
-.seperator{
+
+.seperator {
     border-top: solid 3px #666;
     width: 100px;
     margin-top: 50px;
@@ -45,16 +29,15 @@
 
 .title {
     padding: 30px 0 20px;
-    font-size: 30px;
+    font-size: 60px;
     line-height: 1.2em;
 }
-.banner{
+
+.banner {
     height: 200px;
     width: 200px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    overflow: hidden;
-    float: left;
-    margin: 40px 40px 40px 10px;
+    overflow: hidden
 }

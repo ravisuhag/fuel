@@ -8,36 +8,15 @@ webpackJsonp([0],[
 	var Marker = __webpack_require__(2);
 	var Lessons = __webpack_require__(3);
 	
-	var open_about = document.getElementById('open-about');
-	
-	open_about.addEventListener('click', function () {
-	    openModal();
-	});
-	
-	var close_about = document.getElementById('close-about');
-	
-	close_about.addEventListener('click', function () {
-	    closeModal();
-	});
-	
-	var overlay = document.getElementById('overlay');
-	
-	function openModal() {
-	    overlay.classList.remove("is-hidden");
-	}
-	
-	function closeModal() {
-	    overlay.classList.add("is-hidden");
-	}
-	
 	google.maps.event.addDomListener(window, 'load', function () {
 	
 	    var map = Gmap('map');
 	    var infowindow = new google.maps.InfoWindow();
 	
 	    Lessons.forEach(function (lesson, index) {
-	        var r = 300 / 111300,
-	            // = 100 meters
+	
+	        var r = 1800 / 111300,
+	            // = x meters
 	        y0 = 50.9683611,
 	            x0 = 1.9059048,
 	            u = Math.random(),
@@ -51,42 +30,16 @@ webpackJsonp([0],[
 	        var newY = y0 + y1;
 	        var newX = x0 + x1;
 	
-	        // Add Marker
-	        // var marker = new Marker(
-	        //     new google.maps.LatLng(newY, newX),
-	        //     map, {
-	        //         marker_id: index
-	        //     }
-	        // );
-	
-	        var pinColor = '1581C9';
-	        if (lesson['Type'] === 'volunteer') {
-	            pinColor = 'E9D460';
-	        }
-	        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor, new google.maps.Size(21, 34), new google.maps.Point(0, 0), new google.maps.Point(10, 34));
-	        var pinShadow = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow", new google.maps.Size(40, 37), new google.maps.Point(0, 0), new google.maps.Point(12, 35));
-	
-	        var marker = new google.maps.Marker({
-	            position: new google.maps.LatLng(newY, newX),
-	            map: map,
-	            icon: pinImage,
-	            shadow: pinShadow
+	        var marker = new Marker(new google.maps.LatLng(newY, newX), map, {
+	            marker_id: '1'
 	        });
 	
 	        marker.addListener('click', function () {
-	
-	            // document.getElementById('lesson-title').textContent = lesson['Life Lesson'];
-	            // document.getElementById('lesson-author').textContent = '- ' + lesson['Name'];
-	            // document.getElementById('lesson-story').textContent = lesson['Story Behind the lesson'];
-	            // var img = Math.floor(Math.random() * 23) + 1;
-	            // document.getElementById('lesson-banner').style.backgroundImage = 'url(build/images/pictures/' + img + '.jpg)';
-	
 	            var img = Math.floor(Math.random() * 23) + 1;
-	            var contentString = '<div id="lesson-banner" class="banner" style="background-image: url(build/images/pictures/' + img + '.jpg);"></div>' + '<div>' + '<div id="lesson-title" class="title">' + lesson['Life Lesson'] + '</div>' + '<p id="lesson-story">' + lesson['Story Behind the lesson'] + '</p>' + '<p id="lesson-author" class="u-text-right lesson-author">' + '- ' + lesson['Name'] + ', ' + lesson['Age'] + ' (' + lesson['Country of Origin'] + ')' + '</p>' + '</div>';
-	
-	            infowindow.close();
-	            infowindow.setContent(contentString);
-	            infowindow.open(map, marker);
+	            document.getElementById('lesson-title').textContent = lesson['Life Lesson'];
+	            document.getElementById('lesson-author').textContent = '- ' + lesson['Name'];
+	            document.getElementById('lesson-story').textContent = lesson['Story Behind the lesson'];
+	            document.getElementById('lesson-banner').style.backgroundImage = 'url(build/images/pictures/' + img + '.jpg)';
 	        });
 	    });
 	});
@@ -100,84 +53,9 @@ webpackJsonp([0],[
 	module.exports = function (target, options) {
 	
 	    var defaults = {
-	        zoom: 17,
+	        zoom: 14,
 	        center: new google.maps.LatLng(50.9683611, 1.9059048),
-	        mapTypeId: 'satellite',
-	        styles: [{
-	            "featureType": "administrative",
-	            "elementType": "labels.text.fill",
-	            "stylers": [{
-	                "color": "#444444"
-	            }]
-	        }, {
-	            "featureType": "landscape",
-	            "elementType": "all",
-	            "stylers": [{
-	                "color": "#f2f2f2"
-	            }]
-	        }, {
-	            "featureType": "landscape",
-	            "elementType": "geometry.fill",
-	            "stylers": [{
-	                "color": "#f0e3ce"
-	            }, {
-	                "lightness": "39"
-	            }, {
-	                "gamma": "1.01"
-	            }]
-	        }, {
-	            "featureType": "poi",
-	            "elementType": "all",
-	            "stylers": [{
-	                "visibility": "off"
-	            }]
-	        }, {
-	            "featureType": "road",
-	            "elementType": "all",
-	            "stylers": [{
-	                "saturation": -100
-	            }, {
-	                "lightness": 45
-	            }]
-	        }, {
-	            "featureType": "road",
-	            "elementType": "geometry",
-	            "stylers": [{
-	                "color": "#ffffff"
-	            }]
-	        }, {
-	            "featureType": "road.highway",
-	            "elementType": "all",
-	            "stylers": [{
-	                "visibility": "simplified"
-	            }]
-	        }, {
-	            "featureType": "road.arterial",
-	            "elementType": "labels.icon",
-	            "stylers": [{
-	                "visibility": "off"
-	            }]
-	        }, {
-	            "featureType": "transit",
-	            "elementType": "all",
-	            "stylers": [{
-	                "visibility": "off"
-	            }]
-	        }, {
-	            "featureType": "water",
-	            "elementType": "all",
-	            "stylers": [{
-	                "color": "#e7e1d6"
-	            }, {
-	                "visibility": "on"
-	            }]
-	        }, {
-	            "featureType": "water",
-	            "elementType": "geometry",
-	            "stylers": [{
-	                "color": "#d9d9d9"
-	            }]
-	        }]
+	        styles: [{ "elementType": "labels", "stylers": [{ "visibility": "off" }, { "color": "#f49f53" }] }, { "featureType": "landscape", "stylers": [{ "color": "#f9ddc5" }, { "lightness": -7 }] }, { "featureType": "road", "stylers": [{ "color": "#813033" }, { "lightness": 43 }] }, { "featureType": "poi.business", "stylers": [{ "color": "#645c20" }, { "lightness": 38 }] }, { "featureType": "water", "stylers": [{ "color": "#1994bf" }, { "saturation": -69 }, { "gamma": 0.99 }, { "lightness": 43 }] }, { "featureType": "road.local", "elementType": "geometry.fill", "stylers": [{ "color": "#f19f53" }, { "weight": 1.3 }, { "visibility": "on" }, { "lightness": 16 }] }, { "featureType": "poi.business" }, { "featureType": "poi.park", "stylers": [{ "color": "#645c20" }, { "lightness": 39 }] }, { "featureType": "poi.school", "stylers": [{ "color": "#a95521" }, { "lightness": 35 }] }, {}, { "featureType": "poi.medical", "elementType": "geometry.fill", "stylers": [{ "color": "#813033" }, { "lightness": 38 }, { "visibility": "off" }] }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, { "elementType": "labels" }, { "featureType": "poi.sports_complex", "stylers": [{ "color": "#9e5916" }, { "lightness": 32 }] }, {}, { "featureType": "poi.government", "stylers": [{ "color": "#9e5916" }, { "lightness": 46 }] }, { "featureType": "transit.station", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit.line", "stylers": [{ "color": "#813033" }, { "lightness": 22 }] }, { "featureType": "transit", "stylers": [{ "lightness": 38 }] }, { "featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{ "color": "#f19f53" }, { "lightness": -10 }] }, {}, {}, {}]
 	    };
 	    if (!options) {
 	        options = {};
@@ -214,6 +92,7 @@ webpackJsonp([0],[
 	
 	        div = this.div = document.createElement('div');
 	        div.className = 'marker';
+	        div.className = 'pin';
 	        div.textContent = self.args.text;
 	
 	        if (typeof self.args.marker_id !== 'undefined') {
