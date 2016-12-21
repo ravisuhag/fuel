@@ -75,30 +75,8 @@
   <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHbioLdCPwlkTBLlf203bgOQjtHNAAeJA "></script>
   <script src="build/js/vendor.js "></script>
   <script src="build/js/app.bundle.js "></script>
-  <script>
-    var thumbnailSliderOptions = {
-    sliderId: "imageSlider",
-    orientation: "horizontal",
-    thumbWidth: "2040px", // or "xx%", or "auto"
-    thumbHeight: "200px", // or "xx%", or "auto"
-    showMode: 1,
-    autoAdvance: true,
-    selectable: true,
-    slideInterval: 3000, // in seconds
-    transitionSpeed: 300, // in seconds
-    shuffle: false,
-    startSlideIndex: 0, // 0-based
-    pauseOnHover: true,
-    initSliderByCallingInitFunc: false,
-    rightGap: 0, // or 90, or "auto"
-    keyboardNav: true,
-    mousewheelNav: false,
-    before: null,
-    license: "yourlicensekey"
-};
-  </script>
-  <script src="http://www.menucool.com/slider/thumb/5/thumbnail-slider.js"></script>
-  <script src="http://www.menucool.com/slider/thumb/5/tooltip.js"></script>
+  <script src="build/js/thumbnail-slider.js"></script>
+  <script src="build/js/tooltip.js"></script>
   <script>
   var slides = document.getElementById("thumbnail-slider").getElementsByTagName("li");
   for (var i = 0; i < slides.length; i++) {
