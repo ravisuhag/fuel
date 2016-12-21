@@ -46,9 +46,71 @@
       <p id="lesson-author" class="u-text-right lesson-author"></p>
     </div>
   </div>
+  <div class="gallery-wrap">
+    <div id="thumbnail-slider">
+      <div class="inner">
+        <ul>
+          <li><a class="thumb" href="build/images/pictures/1.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/2.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/3.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/4.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/5.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/6.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/7.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/8.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/9.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/10.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/11.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/12.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/13.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/14.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/15.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/16.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/17.jpg"></a></li>
+          <li><a class="thumb" href="build/images/pictures/18.jpg"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHbioLdCPwlkTBLlf203bgOQjtHNAAeJA "></script>
   <script src="build/js/vendor.js "></script>
   <script src="build/js/app.bundle.js "></script>
+  <script>
+    var thumbnailSliderOptions = {
+    sliderId: "imageSlider",
+    orientation: "horizontal",
+    thumbWidth: "2040px", // or "xx%", or "auto"
+    thumbHeight: "200px", // or "xx%", or "auto"
+    showMode: 1,
+    autoAdvance: true,
+    selectable: true,
+    slideInterval: 3000, // in seconds
+    transitionSpeed: 300, // in seconds
+    shuffle: false,
+    startSlideIndex: 0, // 0-based
+    pauseOnHover: true,
+    initSliderByCallingInitFunc: false,
+    rightGap: 0, // or 90, or "auto"
+    keyboardNav: true,
+    mousewheelNav: false,
+    before: null,
+    license: "yourlicensekey"
+};
+  </script>
+  <script src="http://www.menucool.com/slider/thumb/5/thumbnail-slider.js"></script>
+  <script src="http://www.menucool.com/slider/thumb/5/tooltip.js"></script>
+  <script>
+  var slides = document.getElementById("thumbnail-slider").getElementsByTagName("li");
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].onmouseover = function(e) {
+      var li = this;
+      if (li.thumb) {
+        var content = "<div class='tip-wrap' style='background-image:url(" + li.thumbSrc + ");'></div>";
+        tooltip.pop(li, content);
+      }
+    };
+  }
+  </script>
 </body>
 
 </html>

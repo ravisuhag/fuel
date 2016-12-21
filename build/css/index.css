@@ -509,7 +509,7 @@ a {
   top: 60px;
   width: 400px;
   overflow: scroll;
-  height: calc(100% - 60px);
+  height: calc(100% - 150px);
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); }
 
@@ -528,3 +528,258 @@ a {
   background-size: cover;
   background-position: center;
   overflow: hidden; }
+
+.gallery-wrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding: 10px 0; }
+
+#thumbnail-slider ul li {
+  width: 150px !important;
+  height: 89px !important; }
+
+#thumbnail-slider {
+  margin: 0 auto;
+  width: 100%;
+  padding: 4px 34px;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#thumbnail-slider div.inner {
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0; }
+
+#thumbnail-slider div.inner ul {
+  /*the followings should not be changed */
+  white-space: nowrap;
+  position: relative;
+  left: 0;
+  top: 0;
+  list-style: none;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  float: left !important;
+  width: auto !important;
+  height: auto !important; }
+
+#thumbnail-slider ul li {
+  opacity: 1;
+  display: inline-block;
+  *display: inline !important;
+  /*IE7 hack*/
+  border: 2px solid transparent;
+  margin: 0 3px;
+  /* Spacing between thumbs*/
+  transition: border-color 0.5s;
+  box-sizing: content-box;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+#thumbnail-slider ul li.active {
+  border-color: white; }
+
+#thumbnail-slider .thumb {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  position: absolute;
+  font-size: 0; }
+
+#thumbnail-slider .thumb h3 {
+  font-size: 0; }
+
+/* --------- navigation controls ------- */
+/* The nav id should be: slider id + ("-prev", "-next", and "-pause-play") */
+#thumbnail-slider-pause-play {
+  display: none; }
+
+/*.pause*/
+#thumbnail-slider-prev,
+#thumbnail-slider-next {
+  opacity: 1;
+  position: absolute;
+  /*background-color:#0346a3;*/
+  *background-color: #ccc;
+  /*IE7 hack*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 32px;
+  height: 60px;
+  line-height: 60px;
+  top: 50%;
+  margin: 0;
+  margin-top: -30px;
+  color: white;
+  z-index: 10;
+  cursor: pointer; }
+
+#thumbnail-slider-prev {
+  left: 1px;
+  right: auto; }
+
+#thumbnail-slider-next {
+  left: auto;
+  right: 1px; }
+
+#thumbnail-slider-next.disabled,
+#thumbnail-slider-prev.disabled {
+  opacity: 0.3;
+  cursor: default; }
+
+/* arrows */
+#thumbnail-slider-prev::before,
+#thumbnail-slider-next::before {
+  position: absolute;
+  top: 24px;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-left: 6px solid #DDD;
+  border-top: 6px solid #DDD; }
+
+#thumbnail-slider-prev::before {
+  left: 7px;
+  /*IE9*/
+  transform: rotate(-45deg); }
+
+#thumbnail-slider-next::before {
+  right: 7px;
+  /*IE9*/
+  transform: rotate(135deg); }
+
+@media only screen and (max-width: 736px) {
+  #thumbnail-slider {
+    padding: 4px 24px; } }
+
+/* www.menucool.com/tooltip/javascript-tooltip */
+.tip-wrap {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 800px;
+  height: 500px;
+  color: #666;
+  background-color: #fff; }
+
+/*For tooltip target element that has set class="tooltip" */
+.tooltip {
+  text-decoration: none;
+  border-bottom: 1px dotted #36c;
+  color: #36c;
+  outline: none; }
+
+/*For tooltip box*/
+#mcTooltip {
+  line-height: 16px;
+  border-width: 0px;
+  border-color: #999;
+  color: #000;
+  padding: 0px;
+  font-size: 16px;
+  font-family: Verdana, Arial;
+  border-radius: 4px;
+  background-color: white; }
+
+#mcTooltip.no-padding {
+  padding: 0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7); }
+
+#mcTooltip,
+#mcttCo b {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); }
+
+/* For hyperlink within tooltip */
+#mcTooltip a {
+  color: #36c; }
+
+/*Close button. Available when sticky or overlay has been set to true, or is on touch-enabled devices. */
+#mcttCloseButton {
+  border-radius: 4px;
+  width: 18px;
+  height: 18px;
+  margin-right: 2px;
+  margin-top: 2px;
+  background: black; }
+
+/*Close button X symbol*/
+#mcttCloseButton:after {
+  font: normal 38px/18px arial, sans-serif;
+  color: white;
+  top: 0;
+  left: -2px; }
+
+/*Give the close button a bigger size on smaller devices*/
+@media only screen and (max-width: 736px) {
+  #mcttCloseButton {
+    width: 28px;
+    height: 28px; }
+  #mcttCloseButton:after {
+    font-size: 48px;
+    line-height: 28px; } }
+
+/* Useful when overlay has been set to true or 1 in JS */
+#mcOverlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 4; }
+
+#mcTooltip img {
+  border: 0;
+  vertical-align: middle; }
+
+/*The settings below should remain unchanged*/
+#mcTooltipWrapper {
+  position: absolute;
+  visibility: hidden;
+  overflow: visible;
+  z-index: 9999999999;
+  top: -2000px; }
+
+#mcTooltip {
+  float: left;
+  border-style: solid;
+  position: relative;
+  overflow: hidden; }
+
+.mcTooltipInner {
+  float: left;
+  position: relative;
+  width: auto;
+  height: auto; }
+
+#mcttCo,
+#mcttCo b {
+  position: absolute;
+  overflow: hidden; }
+
+/*compatible with bootstrap*/
+#mcTooltip,
+#mcTooltip div {
+  box-sizing: content-box; }
