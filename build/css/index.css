@@ -434,6 +434,10 @@ a {
   height: calc(100%);
   float: left; }
 
+.social-share img {
+  width: 35px;
+  padding: 3px; }
+
 .nav {
   top: 0;
   left: 0;
