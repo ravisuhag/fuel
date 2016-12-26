@@ -203,11 +203,11 @@
     e.preventDefault();
     var url;
     if (platform === 'fb') {
-      url = 'http://www.facebook.com/sharer.php?u=' + window.location.origin + window.location.search ;
+      url = 'http://www.facebook.com/sharer.php?u=' + 'https://ravisuhag.github.io/fuel/' + window.location.search ;
 
     }
     if (platform === 'tw') {
-      var currentUri = window.location.origin + window.location.search ;
+      var currentUri = 'https://ravisuhag.github.io/fuel/' + window.location.search ;
       url = 'http://twitter.com/intent/tweet?' +
         'text=Calais Jungle Wisdom Map' + '&url=' + currentUri;
     }
