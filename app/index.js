@@ -9,6 +9,20 @@ require('./components/modal');
 
 var prev_marker = null;
 
+
+var oldqs = window.location.href.slice(window.location.href.indexOf('?'));
+oldqs = parseQuery(oldqs);
+var lesso = Lessons[oldqs.lesson_id];
+if (oldqs.lesson_id) {
+    var img = Math.floor(Math.random() * 41) + 1;
+    var duration = 700;
+    $('#lesson-title').text(lesso['Life Lesson']).hide().fadeIn(duration);
+    $('#lesson-author').text('- ' + lesso['Name'] + ', ' + lesso['Age'] + ' (' + lesso['Country of Origin'] + ')').hide().fadeIn(duration);
+    $('#lesson-story').text(lesso['Story Behind the lesson']).hide().fadeIn(duration);
+    $('#lesson-banner').css('background-image', 'url(build/images/pictures/' + img + '.jpg)').hide().fadeIn(duration);
+}
+
+
 google.maps.event.addDomListener(window, 'load', function() {
 
     var map = Gmap('map');
@@ -60,6 +74,8 @@ google.maps.event.addDomListener(window, 'load', function() {
                 prev_marker = marker;
             }
 
+            var query = buildQuery({ lesson_id: index });
+            window.history.pushState('lesson', window.document.title, query);
 
             var duration = 700;
             var img = Math.floor(Math.random() * 41) + 1;
@@ -67,7 +83,34 @@ google.maps.event.addDomListener(window, 'load', function() {
             $('#lesson-author').text('- ' + lesson['Name'] + ', ' + lesson['Age'] + ' (' + lesson['Country of Origin'] + ')').hide().fadeIn(duration);
             $('#lesson-story').text(lesson['Story Behind the lesson']).hide().fadeIn(duration);
             $('#lesson-banner').css('background-image', 'url(build/images/pictures/' + img + '.jpg)').hide().fadeIn(duration);
+
         });
 
     });
+
 });
+
+
+function parseQuery(qs) {
+    qs = qs.replace('?', '');
+    qs = qs.split('&');
+    return qs.reduce(function(data, segment) {
+        segment = segment.split('=');
+        var k = decodeURIComponent(segment[0]);
+        var v = decodeURIComponent(segment[1]);
+        data[k] = v;
+        return data;
+    }, {});
+}
+
+function buildQuery(data) {
+    var qs = '?';
+    var tokens = [];
+    for (var key in data) {
+        var k = encodeURIComponent(key);
+        var v = encodeURIComponent(data[key]);
+        tokens.push(k + '=' + v);
+    }
+    qs += tokens.join('&');
+    return qs;
+}
