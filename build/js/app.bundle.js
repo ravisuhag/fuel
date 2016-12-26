@@ -90,6 +90,10 @@ webpackJsonp([0],[
 	    });
 	});
 	
+	$("body").children().each(function () {
+	    $(this).html($(this).html().replace(/Thumbnail Slider trial version/g, ""));
+	});
+	
 	function parseQuery(qs) {
 	    qs = qs.replace('?', '');
 	    qs = qs.split('&');
