@@ -66,7 +66,7 @@ webpackJsonp([0],[
 	            }
 	
 	            var duration = 700;
-	            var img = Math.floor(Math.random() * 23) + 1;
+	            var img = Math.floor(Math.random() * 41) + 1;
 	            $('#lesson-title').text(lesson['Life Lesson']).hide().fadeIn(duration);
 	            $('#lesson-author').text('- ' + lesson['Name'] + ', ' + lesson['Age'] + ' (' + lesson['Country of Origin'] + ')').hide().fadeIn(duration);
 	            $('#lesson-story').text(lesson['Story Behind the lesson']).hide().fadeIn(duration);
@@ -3430,6 +3430,223 @@ webpackJsonp([0],[
 	    "Country of Origin": "Canada ",
 	    "Department at the warehouse ": "",
 	    "Contact details (optional)": null,
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Hannah Mary ",
+	    "Life Lesson": "It's important to look at the past and know that you have changed for the better.",
+	    "Story Behind the lesson": "You should not be guilty that you have changed or have become a better person because that's what life is all about. ",
+	    "Age": 29,
+	    "Country of Origin": "Canada ",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Christy Drummond",
+	    "Life Lesson": "Never be stuck on just one thing",
+	    "Story Behind the lesson": "You can always move around. Don't be lost in a difficult situation. When my parents got divorced, I was stuck on the separation. Looking back, I could have moved on much earlier.  ",
+	    "Age": 23,
+	    "Country of Origin": "",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Claire Dumbill",
+	    "Life Lesson": "If you have made a good decision, allow your emotions to adjust to it. ",
+	    "Story Behind the lesson": "If a situation is bad just act on it and find happiness. After University, I didn't have a great job. So, I just moved out of parents. i took the first good job and promised myself to find along the way the best job or the one I liked. ",
+	    "Age": 23,
+	    "Country of Origin": "",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Louise Fleming",
+	    "Life Lesson": "Sometimes don't afraid to be selfish",
+	    "Story Behind the lesson": "In the refugee crisis context, you can be willing to help everyone as much as you can but you must take care of yourself first. I was burnt out in the two weeks last time I was here. I forgot to eat or to take small breaks. One must take care of oneself first and then help as much as he/she can. \n",
+	    "Age": 23,
+	    "Country of Origin": "",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Milagross Razquin",
+	    "Life Lesson": "The help is never enough",
+	    "Story Behind the lesson": "I am here in this organisation for one week only, but I feel it's not enough for the amount of work I see. The help is not only monetary but also through time. ",
+	    "Age": 27,
+	    "Country of Origin": "",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "David Baily",
+	    "Life Lesson": "You can't take anything for granted",
+	    "Story Behind the lesson": "Working at the warehouse that serves the camp taught me that things you have can disappear any moment. ",
+	    "Age": 67,
+	    "Country of Origin": "Wales",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Patricia Lopez",
+	    "Life Lesson": "Everyone should contribute to help in the refugee crisis. As human beings we need to support each other. ",
+	    "Story Behind the lesson": "I feel a lot of people are just watching the news and doing nothing.",
+	    "Age": 20,
+	    "Country of Origin": "Spain",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Thore Reigbper",
+	    "Life Lesson": "Be yourself",
+	    "Story Behind the lesson": "When you have so much influence from people it can be hard to be yourself.",
+	    "Age": 18,
+	    "Country of Origin": "Switzerland",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Andrea Sanchez",
+	    "Life Lesson": "If people can help you, then you must help them as well. ",
+	    "Story Behind the lesson": "I met an old man who had lived many experiences. He told me that the most important thing was to help others. Everyone is looking for a person. You can be that person. ",
+	    "Age": 21,
+	    "Country of Origin": "Spain",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Maximilian",
+	    "Life Lesson": "Listen to your inner voice and don't worry be happy",
+	    "Story Behind the lesson": "Every time when I don't feel good, I listen to myself. So, you don't have to worry and you can be happy.",
+	    "Age": 18,
+	    "Country of Origin": "Germany",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Alice Hodgson",
+	    "Life Lesson": "Nobody is perfect and nothing is right all the time. The most important thing is to be compassionate. ",
+	    "Story Behind the lesson": "My sister was ill for a long time and I remember feeling that I need to take care of her. And that, in that moment nothing else matters. What I feel or would want the situation to be was irrelevant to the fact that I was needed fully and wholeheartedly.",
+	    "Age": 22,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Loz Hennessy",
+	    "Life Lesson": "Never take life too seriously",
+	    "Story Behind the lesson": "I always knew it. But I reinforced it again and nothing went disastrously wrong so far. ",
+	    "Age": 25,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Ciara Cohen",
+	    "Life Lesson": "Show everyone respect",
+	    "Story Behind the lesson": "My parents uprbringing taught me this lesson. Before you come here to help the refugees, you have your own ideas because of the media but everyone is treated equally when it comes to the work to be done. ",
+	    "Age": 23,
+	    "Country of Origin": "Wales",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Ines Del Campo",
+	    "Life Lesson": "If you do a good thing for people, life ensures it returns it to you. ",
+	    "Story Behind the lesson": "My parents and my life experience taught me this. My father was paralyzed for six months. I worked to provide the money. And now, I can travel as I get to volunteer and help others.",
+	    "Age": 21,
+	    "Country of Origin": "Spain",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Marina Vizcarro",
+	    "Life Lesson": "All people have the rights",
+	    "Story Behind the lesson": "It is not fair that some people don't have the life they deserve. My father had three bad economic years. Where he could pay for nothing. Seeing him struggle made me aware of how others would live in worse situations. ",
+	    "Age": 18,
+	    "Country of Origin": "Spain",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Ariadna ",
+	    "Life Lesson": "Believe in yourself",
+	    "Story Behind the lesson": "Four years ago, when I lived through a good and a bad experience both, I was totally alone at that point. I learnt to love myself the way I wanted. ",
+	    "Age": 20,
+	    "Country of Origin": "Spain",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Alida Sangrigoli",
+	    "Life Lesson": "Never lose hope ",
+	    "Story Behind the lesson": "Family issues and my Mom's health tested me to believe this. You don't have to lose hope because you will overcome it soon.",
+	    "Age": 26,
+	    "Country of Origin": "Italy",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Chlue Senechal ",
+	    "Life Lesson": "It is always going to be alright",
+	    "Story Behind the lesson": "Always look on the bright side because it always becomes better. When I am learning English in school in a special class I had difficulty. But sooner than I expected I was speaking the language and started to get comfortable with it. ",
+	    "Age": 24,
+	    "Country of Origin": "France",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Yvette Senechal ",
+	    "Life Lesson": "The most important thing is a human being",
+	    "Story Behind the lesson": "At some point in life everyone has to realise that material things mean nothing. You cannot value items more than people. For me, this realisation was when my one and a half months old child died.",
+	    "Age": 51,
+	    "Country of Origin": "France",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Rachael Cummins",
+	    "Life Lesson": "Don't play yourself down",
+	    "Story Behind the lesson": "I am very much the person who always thinks that I am wrong. I thought most of the time what I have to offer is not good but that's not true. Everyone can be something good or unique. ",
+	    "Age": 26,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Calum Paramor",
+	    "Life Lesson": "Have people around you that aren't like you",
+	    "Story Behind the lesson": "I am quite left wing and an atheist. I ended up in working in a Catholic school. And I found that you know a lot more about what you think when you surround yourself with people who think differently. ",
+	    "Age": 23,
+	    "Country of Origin": "U.K.",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Calum McAlaase",
+	    "Life Lesson": "Everybody is a human and they have to right to live the way they want to. ",
+	    "Story Behind the lesson": "I haven't learnt it specifically because of any one incident. I have pretty much believed it all my life. ",
+	    "Age": 9,
+	    "Country of Origin": "England and Scotland",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Kiera",
+	    "Life Lesson": "Be nice to yourself",
+	    "Story Behind the lesson": "I was quite a serious student. I worked hard to get into Cambridge. And I see people doing the same. But the thing is when you be strict, seriousness comes out of it. ",
+	    "Age": 51,
+	    "Country of Origin": "Dorset",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "James Taylor",
+	    "Life Lesson": "Never stop being happy in any situation",
+	    "Story Behind the lesson": "It is by far the best way to make life easier. Whatever happens if you can smile, you can create good energy around yourself. You are always happy. When I was nine, my mother cracked her head open. I called the ambulance. She had a major fit because I called the ambulance despite her saying no. But I did the right thing. I stayed positive about the whole incident. ",
+	    "Age": 21,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Sam Williams",
+	    "Life Lesson": "Just make sure if you can help somebody and do so",
+	    "Story Behind the lesson": "Meeting people in my hometown, giving them some clothing or buying food taught me this. Now I am here working at the warehouse too. ",
+	    "Age": 20,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Sara Louisa",
+	    "Life Lesson": "Decide to be happy because it is good for health",
+	    "Story Behind the lesson": "When you do a lot of things and focus too much, you forget to take it easy. One must relax and take time to enjoy. Difficult situations taught me this. ",
+	    "Age": 24,
+	    "Country of Origin": "Denmark",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Lyndsey",
+	    "Life Lesson": "It is always good to give",
+	    "Story Behind the lesson": "In good places you can give a lot but even in bad places. My life is difficult right now but I have put it aside to focus on what I can do to help.",
+	    "Age": 45,
+	    "Country of Origin": "U.K.",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Sarah Alford-Smith",
+	    "Life Lesson": "Most people are kind",
+	    "Story Behind the lesson": "People really surprise me all the time. I fundraised in 6 days to be able to come and volunteer in Calais for the refugees. We told people we wanted to really go and they helped us get here.",
+	    "Age": 41,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Lizzie Cooper",
+	    "Life Lesson": "Every bra is different like human beings",
+	    "Story Behind the lesson": "I went back to school and kept reliving things. I even changed from being academic to being practical. I am sorting bra sizes for refugees from the donated pile of bras and realizing that human beings are all different life different bras. ",
+	    "Age": 25,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Sophie Tod",
+	    "Life Lesson": "Try to relate to everyone with a sense of humor",
+	    "Story Behind the lesson": "Meeting people you might not see eye to eye with a certain sense of humour always helps. Specially, at work people are different and you have to work with them to reach to a point of agreement.",
+	    "Age": 22,
+	    "Country of Origin": "England",
+	    "Type": "volunteer"
+	}, {
+	    "Name": "Eloise Crockett",
+	    "Life Lesson": "Do what you want to do",
+	    "Story Behind the lesson": "I wanted to travel the world before going to University to have some life experineces. My collegemates said to straight go to University. But I followed my heart. ",
+	    "Age": 20,
+	    "Country of Origin": "England",
 	    "Type": "volunteer"
 	}];
 

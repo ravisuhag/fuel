@@ -62,7 +62,7 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 
             var duration = 700;
-            var img = Math.floor(Math.random() * 23) + 1;
+            var img = Math.floor(Math.random() * 41) + 1;
             $('#lesson-title').text(lesson['Life Lesson']).hide().fadeIn(duration);
             $('#lesson-author').text('- ' + lesson['Name'] + ', ' + lesson['Age'] + ' (' + lesson['Country of Origin'] + ')').hide().fadeIn(duration);
             $('#lesson-story').text(lesson['Story Behind the lesson']).hide().fadeIn(duration);
