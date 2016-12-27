@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="no">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
   <link rel="shortcut icon" href="build/images/ico.png" alt="header icon">
-  <meta name='title' content="Project Fuel - Collects life lessons from people all over the world" />
+  <meta name='title' content="Life lessons from Calais Jungle Wisdom Map" />
   <meta name="description" content="Project FUEL, founded by Deepak Ramola, collects life lessons from people and turns them into interactive, performance activities, Learnings.">
   <meta name="keywords" content="Project Fuel, Project Fuel india,Deepak Ramola, Inspirational Life Lessons,Collection of life lesson, your life lesson, write my life story, Life Lesson collection">
   <meta property='og:title' content="Project Fuel - Collects life lessons from people all over the world" />
@@ -183,39 +183,37 @@
     </div>
   </div>
   <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHbioLdCPwlkTBLlf203bgOQjtHNAAeJA "></script>
-  <script src="build/js/vendor.js "></script>
-  <script src="build/js/app.bundle.js "></script>
   <script src="build/js/thumbnail-slider.js"></script>
   <script src="build/js/tooltip.js"></script>
   <script>
-  var slides = document.getElementById("thumbnail-slider").getElementsByTagName("li");
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].onmouseover = function(e) {
-      var li = this;
-      if (li.thumb) {
-        var content = "<div class='tip-wrap' style='background-image:url(" + li.thumbSrc + ");'></div>";
-        tooltip.pop(li, content);
+    var slides = document.getElementById("thumbnail-slider").getElementsByTagName("li");
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].onmouseover = function(e) {
+        var li = this;
+        if (li.thumb) {
+          var content = "<div class='tip-wrap' style='background-image:url(" + li.thumbSrc + ");'></div>";
+          tooltip.pop(li, content);
+        }
+      };
+    }
+  
+    function share(e, platform) {
+      e.preventDefault();
+      var url;
+      if (platform === 'fb') {
+        url = 'http://www.facebook.com/sharer.php?u=' + 'https://ravisuhag.github.io/fuel/' + window.location.search ;
+  
       }
-    };
-  }
-
-  function share(e, platform) {
-    e.preventDefault();
-    var url;
-    if (platform === 'fb') {
-      url = 'http://www.facebook.com/sharer.php?u=' + 'https://ravisuhag.github.io/fuel/' + window.location.search ;
-
+      if (platform === 'tw') {
+        var currentUri = 'https://ravisuhag.github.io/fuel/' + window.location.search ;
+        url = 'http://twitter.com/intent/tweet?' +
+          'text=Calais Jungle Wisdom Map' + '&url=' + currentUri;
+      }
+      window.open(url);
     }
-    if (platform === 'tw') {
-      var currentUri = 'https://ravisuhag.github.io/fuel/' + window.location.search ;
-      url = 'http://twitter.com/intent/tweet?' +
-        'text=Calais Jungle Wisdom Map' + '&url=' + currentUri;
-    }
-    window.open(url);
-    return url;
-
-  }
   </script>
+  <script src="build/js/vendor.js "></script>
+  <script src="build/js/app.bundle.js "></script>
 </body>
 
 </html>

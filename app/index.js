@@ -90,11 +90,7 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 });
 
-
-$("body").children().each(function () {
-    $(this).html( $(this).html().replace(/Thumbnail Slider trial version/g,"") );
-});
-
+$('#thumbnail-slider').html( $('#thumbnail-slider').html().replace(/Thumbnail Slider trial version/g,"") );
 
 function parseQuery(qs) {
     qs = qs.replace('?', '');
