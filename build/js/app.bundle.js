@@ -90,8 +90,6 @@ webpackJsonp([0],[
 	    });
 	});
 	
-	$('#thumbnail-slider').html($('#thumbnail-slider').html().replace(/Thumbnail Slider trial version/g, ""));
-	
 	function parseQuery(qs) {
 	    qs = qs.replace('?', '');
 	    qs = qs.split('&');
