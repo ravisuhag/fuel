@@ -1,8 +1,6 @@
-# Project Fuel 
+# Fuel 
 <img align="right" height="400" src="/assets/images/fuel.png">
-> Calais Jungle Wisdom Map
-
-Calais Jungle was, until recently, an illegal refugee and migrant camp in the south of France where nearly 7000 refugees from more than eight nationalities had temporarily settled. These were not just refugees displaced by conflict in their home countries but also economic and political refugees, amongst others. Most residents of the camp who we interacted with had one big goal - to smuggle themselves into the United Kingdom via lorries/ferries/cars/trains travelling to the UK. 
+Fuel is a Calais Jungle Wisdom Map. Calais Jungle was, until recently, an illegal refugee and migrant camp in the south of France where nearly 7000 refugees from more than eight nationalities had temporarily settled. These were not just refugees displaced by conflict in their home countries but also economic and political refugees, amongst others. Most residents of the camp who we interacted with had one big goal - to smuggle themselves into the United Kingdom via lorries/ferries/cars/trains travelling to the UK. 
 
 Today, while the camp no longer exists - since all 7000 of its residents were evicted by French authorities on 24th October 2016 - the wisdom of its refugees lives on.
 
